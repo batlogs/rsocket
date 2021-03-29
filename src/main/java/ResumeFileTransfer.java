@@ -60,7 +60,7 @@ public class ResumeFileTransfer {
                 .requestStream(codec.encode(new Request(16, "lorem.txt")))
                 .log("client")
                 .doFinally(s -> server.dispose())
-                .subscribe(Files.fileSink("gilorem_output.txt", PREFETCH_WINDOW_SIZE));
+                .subscribe(Files.fileSink("lorem_output.txt", PREFETCH_WINDOW_SIZE));
 
         server.onClose().block();
     }
